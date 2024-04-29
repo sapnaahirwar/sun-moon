@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+}
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 50px gold;
+
+}
+.earth {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: darkcyan;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+    animation: rotate-earth 12s linear infinite;
+}
+.earth::before{
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform-origin: 0 0;
+    transform: translate(-50%,-50%);
+}
+.moon {
+    position: absolute;
+    width:25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left ;
+    animation: rotate-moon 6s linear infinite;
+}
+@keyframes rotate-moon{
+    0%
+    {
+        transform: rotate(0deg) translateX(30px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(30px);
+    }
+}
+@keyframes rotate-earth {
+    0% {
+        transform: rotate(0deg) translateX(100px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(100px);
+    }
+}
